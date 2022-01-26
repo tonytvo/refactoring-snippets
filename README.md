@@ -34,6 +34,6 @@
   - when should you refactor?
   - did you feel safe when you refactor? would you work differently if you didn't have fast, reliable test?
 # References
-https://github.com/codecop/dependency-breaking-katas
-https://tonytvo.github.io/what-simple-way-share-learn-refactor/
-https://github.com/tomphp/event-sourcing-example
+- https://github.com/codecop/dependency-breaking-katas
+- https://tonytvo.github.io/what-simple-way-share-learn-refactor/
+- https://github.com/tomphp/event-sourcing-example
