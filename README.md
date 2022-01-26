@@ -23,6 +23,8 @@
     - introduce indirection steps (warm and dry place) 
 - X minutes do
   - https://github.com/tonytvo/refactoring-snippets
+  - [] checkout golden-master-practice
+    - [] add golden master test
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
   - what's your 10 refactoring snippets that you use daily the most?
