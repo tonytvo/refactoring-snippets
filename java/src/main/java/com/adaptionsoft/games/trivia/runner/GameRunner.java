@@ -10,19 +10,23 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
+		Random rand = new Random();
+		playGameWith(rand);
+	}
+
+	public static void playGameWith(Random rand) {
 		System.out.println("******************* Game Started *********************");
 		Game aGame = new Game();
-		
+
 		aGame.add("Chet");
 		aGame.add("Pat");
 		aGame.add("Sue");
-		
-		Random rand = new Random();
+
 		int roundCount = 1;
 		do {
 			System.out.println("*************** Round " + roundCount + " Started ***************");
 			aGame.roll(rand.nextInt(5) + 1);
-			
+
 			if (rand.nextInt(9) == 7) {
 				notAWinner = aGame.wrongAnswer();
 			} else {
