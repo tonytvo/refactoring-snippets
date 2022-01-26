@@ -10,6 +10,7 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
+		System.out.println("******************* Game Started *********************");
 		Game aGame = new Game();
 		
 		aGame.add("Chet");
@@ -17,8 +18,9 @@ public class GameRunner {
 		aGame.add("Sue");
 		
 		Random rand = new Random();
-	
+		int roundCount = 1;
 		do {
+			System.out.println("*************** Round " + roundCount + " Started ***************");
 			aGame.roll(rand.nextInt(5) + 1);
 			
 			if (rand.nextInt(9) == 7) {
@@ -26,10 +28,9 @@ public class GameRunner {
 			} else {
 				notAWinner = aGame.wasCorrectlyAnswered();
 			}
-			
-			
-			
+			System.out.println("--------------- Round " + roundCount + " Ended -----------------");
+			roundCount++;
 		} while (notAWinner);
-		
+		System.out.println("------------------------- Game Ended ------------------------");
 	}
 }
