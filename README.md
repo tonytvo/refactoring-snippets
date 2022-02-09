@@ -27,7 +27,7 @@
     - [] add golden master test
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
-  - what's your 10 refactoring snippets that you use daily the most?
+  - what's your favorite refactoring snippets that you use daily the most?
   - tell me 3 ways refactoring affect your productivity as a developer. For examples:
     - they help you to think at a higher level of abstraction
     - as a navigator if you know the names of these you can communicate more effectively with the driver
@@ -35,6 +35,15 @@
     - a long sequence of small refactorings means you can make a larger change safely, avoiding bugs.
   - when should you refactor?
   - did you feel safe when you refactor? would you work differently if you didn't have fast, reliable test?
+
+Feedback
+- more interactive, more slides, where it easier to retain
+- golden master (easier to grasp)
+- draw pictures for each of the refactoring method.
+- focus introduce indirection steps that move the implementation details up the call stack.
+- ask 1 questions if only has 5 mins left.
+- explain domain vocabulary depends on the audience.
+- if you watch yourself give a talk, pay attention to "that could have been better"
 # References
 - https://github.com/codecop/dependency-breaking-katas
 - https://tonytvo.github.io/what-simple-way-share-learn-refactor/
