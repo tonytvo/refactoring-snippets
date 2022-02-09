@@ -1,5 +1,5 @@
-# 10 Refactoring Snippets
-- for me to learn and share what's the most common 10 refactoring snippets that people use daily
+# Introduce the indirection layer
+- I often run into situations where I couldn't making a single change requires cascading effects of changes, and recently, I have learned a good trick from J.B. Rainberger to introduce indirection layer to help us making small steps incrementally
 # Session Outline
 - 5 min connect: 
   - what's are you hoping to achieve, when you sit down to refactor some code? what is your motivation?
@@ -13,7 +13,11 @@
     - when you run into code that harder than necessary to understand and modify. You do a series of safe refactorings on it to improve readability and reduce complexity
     - the trick is to practice so that you can execute the refactoring without conscious thought. Without enough patience and practice, you have to switch more often among the questions "which refactorings will improve this design?" and "how do I perform this micro-step?".
     - once you could do refactoring without conscious thoughts, instead of thinking "I know how to safely lead the design where I want it to go", to the more powerful "I can just start removing duplication and improving names and a good design will emerge" and you might find helpful designs that are simpler than the ones that your intuition can see.
-  - my 10 refactoring snippets
+  - introduce indirection layer
+    - we typically create the warm and dry place
+    - gradually changing the client to call this new warm and dry place, so we can start making incremental change without introducing cascading effect on the system.
+    - we could remove the deprecated methods/classes or inline the warm and dry place.
+  - my other favorite refactoring snippets
     - extract method
     - extract variable
     - rename method, classes, fields
@@ -22,7 +26,12 @@
     - introduce parameters
     - introduce indirection steps (warm and dry place) 
 - X minutes do
-  - https://github.com/tonytvo/refactoring-snippets
+  - It seems like OrderLines is a good home (domain concept) for Order.lines field, as once you extract Order.lines into OrderLines, we could see a whole bunch of behavior should belong into OrderLines as well
+  - [ ] checkout https://github.com/tonytvo/refactoring-snippets
+  - [ ] extract all methods that references Order.lines as the following snippets
+    - [extract updateItem](./snippets/lines-update-item.gif)
+    - [extract asList](./snippets/extract-aslist-lines.gif)
+    - [extract isEmpty](./snippets/extract-is-empty.gif)
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
   - what's your favorite refactoring snippets that you use daily the most?
