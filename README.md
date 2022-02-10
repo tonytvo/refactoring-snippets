@@ -3,15 +3,15 @@
 # Session Outline
 - 5 min connect: 
   - what's are you hoping to achieve, when you sit down to refactor some code? what is your motivation?
-  - ask the group to name some refactorings that they have used, and the coressponding code smells
-  - what can go wrong when refactoring? How do you know if your refacotring was safe?
+  - ask the group to name some refactoring that they have used, and the corresponding code smells
+  - what can go wrong when refactoring? How do you know if your refactoring was safe?
   - how do you know when to refactor?
 - 10 min concept
   - [Martin's Fowler definitions](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
   - purpose of refactoring is to make code easier to understand and cheaper to modify
     - it's a necessary part of iterative and incremental development. You don't plan the entire design up front, you take working code and change the design to support new functionality
-    - when you run into code that harder than necessary to understand and modify. You do a series of safe refactorings on it to improve readability and reduce complexity
-    - the trick is to practice so that you can execute the refactoring without conscious thought. Without enough patience and practice, you have to switch more often among the questions "which refactorings will improve this design?" and "how do I perform this micro-step?".
+    - when you run into code that harder than necessary to understand and modify. You do a series of safe refactoring on it to improve readability and reduce complexity
+    - the trick is to practice so that you can execute the refactoring without conscious thought. Without enough patience and practice, you have to switch more often among the questions "which refactoring will improve this design?" and "how do I perform this micro-step?".
     - once you could do refactoring without conscious thoughts, instead of thinking "I know how to safely lead the design where I want it to go", to the more powerful "I can just start removing duplication and improving names and a good design will emerge" and you might find helpful designs that are simpler than the ones that your intuition can see.
   - introduce indirection layer
     - we typically create the warm and dry place
@@ -60,6 +60,7 @@
       - [extract isEmpty](./snippets/extract-is-empty.gif)
     - [ ] *liberating the wrapped* by extracting delegate class OrderLines
       - [extract delegate OrderLines](./snippets/extract-delegate-orderlines.gif) 
+    - [ ] clean up, remove unused method updateItem, asList, isEmpty in Order
 
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
@@ -68,7 +69,7 @@
     - they help you to think at a higher level of abstraction
     - as a navigator if you know the names of these you can communicate more effectively with the driver
     - it takes time to learn them
-    - a long sequence of small refactorings means you can make a larger change safely, avoiding bugs.
+    - a long sequence of small refactoring means you can make a larger change safely, avoiding bugs.
   - when should you refactor?
   - did you feel safe when you refactor? would you work differently if you didn't have fast, reliable test?
 
