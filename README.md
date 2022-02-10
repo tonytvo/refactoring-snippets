@@ -26,12 +26,41 @@
     - introduce parameters
     - introduce indirection steps (warm and dry place) 
 - X minutes do
-  - It seems like OrderLines is a good home (domain concept) for Order.lines field, as once you extract Order.lines into OrderLines, we could see a whole bunch of behavior should belong into OrderLines as well
+  - It seems like OrderLines is a good home (domain concept) for Order.lines field, once you extract Order.lines into OrderLines, we could see a whole bunch of behavior should belong into OrderLines as well
   - [ ] checkout https://github.com/tonytvo/refactoring-snippets
-  - [ ] extract all methods that references Order.lines as the following snippets
-    - [extract updateItem](./snippets/lines-update-item.gif)
-    - [extract asList](./snippets/extract-aslist-lines.gif)
-    - [extract isEmpty](./snippets/extract-is-empty.gif)
+  - **adding the wrapper**
+    - [ ] checkout introduce-indirection-starting-point branch
+    - [ ] extract all methods that references Order.lines as the following snippets
+      - [extract updateItem](./snippets/lines-update-item.gif)
+      - [extract asList](./snippets/extract-aslist-lines.gif)
+      - [extract isEmpty](./snippets/extract-is-empty.gif)
+    - [ ] in method asList, create the wrapper object `OrderLines` that wrap `lines` and provide getter to return wrapped objects `lines`
+      - Option 1:
+        - [wrap unwrap lines](./snippets/wrap-unwrap-object.gif)
+        - [introduce parameter OrderLines](./snippets/introduce-parameter-orderlines.gif)
+      - Option 2:
+        - [introduce parameter for lines](./snippets/introduce-lines-parameter.gif)
+        - [introduce parameter object for lines](./snippets/introduce-parameter-objects-orderlines.gif)
+    - [ ] [move asList to OrderLines](./snippets/move-aslist-to-orderlines.gif)
+    - follow the previous steps to move updateItem to OrderLines
+      - One of:
+        - Option 1
+          - [wrap unwrap lines](./snippets/wrap-unwrap-object.gif)
+          - [introduce parameter OrderLines](./snippets/introduce-parameter-orderlines.gif)
+        - Option 2
+          - [introduce parameter for lines](./snippets/introduce-lines-parameter.gif)
+          - [introduce parameter object for lines using existing object](./snippets/introduce-parameter-object-use-existing-orderlines.gif)
+      - [ ] [move updateItem to OrderLines](./snippets/move-update-item-to-orderlines.gif)
+    - [ ] move isEmpty to OrderLines
+  - **liberating the wrapped**
+    - [ ] checkout introduce-indirection-starting-point branch
+    - [ ] extract all methods that references Order.lines as the following snippets
+      - [extract updateItem](./snippets/lines-update-item.gif)
+      - [extract asList](./snippets/extract-aslist-lines.gif)
+      - [extract isEmpty](./snippets/extract-is-empty.gif)
+    - [ ] *liberating the wrapped* by extracting delegate class OrderLines
+      - [extract delegate OrderLines](./snippets/extract-delegate-orderlines.gif) 
+
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
   - what's your favorite refactoring snippets that you use daily the most?
@@ -43,14 +72,6 @@
   - when should you refactor?
   - did you feel safe when you refactor? would you work differently if you didn't have fast, reliable test?
 
-Feedback
-- more interactive, more slides, where it easier to retain
-- golden master (easier to grasp)
-- draw pictures for each of the refactoring method.
-- focus introduce indirection steps that move the implementation details up the call stack.
-- ask 1 questions if only has 5 mins left.
-- explain domain vocabulary depends on the audience.
-- if you watch yourself give a talk, pay attention to "that could have been better"
 # References
 - https://github.com/codecop/dependency-breaking-katas
 - https://tonytvo.github.io/what-simple-way-share-learn-refactor/
