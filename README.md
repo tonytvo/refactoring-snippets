@@ -61,6 +61,7 @@
     - [ ] *liberating the wrapped* by extracting delegate class OrderLines
       - [extract delegate OrderLines](./snippets/extract-delegate-orderlines.gif) 
     - [ ] clean up, remove unused method updateItem, asList, isEmpty in Order
+      - [remove unused method isEmpty](./snippets/delete-unused-method-is-empty.gif) 
 
 - 5 min reflect
   - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
