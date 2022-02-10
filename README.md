@@ -1,8 +1,8 @@
 # Introduce the indirection layer
-- I often run into situations where I couldn't making a single change requires cascading effects of changes, and recently, I have learned a good trick from J.B. Rainberger to introduce indirection layer to help us making small steps incrementally
+- when we refactoring, we often end up in situation where single change causing cascading effects of changes and we retreat in our corner and cry, and recently, I have learned a good trick from J.B. Rainberger to introduce indirection layer to help us making small steps incrementally
 # Session Outline
-- 5 min connect: 
-  - what's are you hoping to achieve, when you sit down to refactor some code? what is your motivation?
+- 5 mins connect: 
+  - what are you hoping to achieve when you sit down to refactor some code? what is your motivation?
   - ask the group to name some refactoring that they have used, and the corresponding code smells
   - what can go wrong when refactoring? How do you know if your refactoring was safe?
   - how do you know when to refactor?
@@ -11,7 +11,7 @@
   - purpose of refactoring is to make code easier to understand and cheaper to modify
     - it's a necessary part of iterative and incremental development. You don't plan the entire design up front, you take working code and change the design to support new functionality
     - when you run into code that harder than necessary to understand and modify. You do a series of safe refactoring on it to improve readability and reduce complexity
-    - the trick is to practice so that you can execute the refactoring without conscious thought. Without enough patience and practice, you have to switch more often among the questions "which refactoring will improve this design?" and "how do I perform this micro-step?".
+    - the trick is to practice so that you can execute the refactoring without conscious thought. With enough patience and practice, you can execute refactoring with unconscious thoughts and you don't have to switch often among the questions "which refactoring will improve this design?" and "how do I perform this micro-step?".
     - once you could do refactoring without conscious thoughts, instead of thinking "I know how to safely lead the design where I want it to go", to the more powerful "I can just start removing duplication and improving names and a good design will emerge" and you might find helpful designs that are simpler than the ones that your intuition can see.
   - introduce indirection layer
     - we typically create the warm and dry place
@@ -40,7 +40,7 @@
         - [introduce parameter OrderLines](./snippets/introduce-parameter-orderlines.gif)
       - Option 2:
         - [introduce parameter for lines](./snippets/introduce-lines-parameter.gif)
-        - [introduce parameter object for lines](./snippets/introduce-parameter-objects-orderlines.gif)
+        - [introduce parameter object OrderLines for lines](./snippets/introduce-parameter-objects-orderlines.gif)
     - [ ] [move asList to OrderLines](./snippets/move-aslist-to-orderlines.gif)
     - follow the previous steps to move updateItem to OrderLines
       - One of:
@@ -49,7 +49,7 @@
           - [introduce parameter OrderLines](./snippets/introduce-parameter-orderlines.gif)
         - Option 2
           - [introduce parameter for lines](./snippets/introduce-lines-parameter.gif)
-          - [introduce parameter object for lines using existing object](./snippets/introduce-parameter-object-use-existing-orderlines.gif)
+          - [introduce parameter object for lines using existing object OrderLines](./snippets/introduce-parameter-object-use-existing-orderlines.gif)
       - [ ] [move updateItem to OrderLines](./snippets/move-update-item-to-orderlines.gif)
     - [ ] move isEmpty to OrderLines
   - **liberating the wrapped**
@@ -64,7 +64,6 @@
       - [remove unused method isEmpty](./snippets/delete-unused-method-is-empty.gif) 
 
 - 5 min reflect
-  - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
   - what's your favorite refactoring snippets that you use daily the most?
   - tell me 3 ways refactoring affect your productivity as a developer. For examples:
     - they help you to think at a higher level of abstraction
@@ -73,6 +72,7 @@
     - a long sequence of small refactoring means you can make a larger change safely, avoiding bugs.
   - when should you refactor?
   - did you feel safe when you refactor? would you work differently if you didn't have fast, reliable test?
+  - how would you define 'code smell'? write a definition on a sticky note and take it with you to put next to your screen
 
 # References
 - https://github.com/codecop/dependency-breaking-katas
