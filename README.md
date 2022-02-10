@@ -27,7 +27,7 @@
     - introduce indirection steps (warm and dry place) 
 - X minutes do
   - It seems like OrderLines is a good home (domain concept) for Order.lines field, once you extract Order.lines into OrderLines, we could see a whole bunch of behavior should belong into OrderLines as well
-  - [ ] checkout https://github.com/tonytvo/refactoring-snippets
+  - [ ] checkout https://github.com/tonytvo/event-sourcing-example
   - **adding the wrapper**
     - [ ] checkout introduce-indirection-starting-point branch
     - [ ] extract all methods that references Order.lines as the following snippets
